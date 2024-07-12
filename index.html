@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKJ</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body id="body">
+    <div id="ultimateBox">
+        <div id="blackScreen" class="off">
+
+        </div>
+        <header id="header">
+            <div id="menuButton">
+                <div id="webapp_cover">
+                    <div id="menu_button">
+                        <input type="checkbox"   id="menu_checkbox">
+                        <label for="menu_checkbox" id="menu_label">
+                            <div id="menu_text_bar"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="titleBox">
+
+            </div>
+        </header>
+        <footer id="footer">
+            <div id="homeButton">
+                <input type="buton" value="off" id="homeButtonClicking">
+            </div>
+        </footer>
+        <section id="section">
+            <div id="sectionBox">
+                
+            </div>
+            <div id="EditArea">
+                <div id="Plus">ADD</div>
+                <div id="Delete">REM.</div>
+                <div id="Edit">EDI.</div>
+            </div>
+            <div id="EditBox"  >
+                <div class="EditBoxes">
+                    <form action="#" id="EditBoxAdd"> <!-- add -->
+                        <label for="bname">제목</label>
+                        <input type="text" id="bname" name="bname" value=""><br>
+                        <label for="bauthor">저자</label>
+                        <input type="text" id="bauthor" name="bauthor" value=""><br>
+                        <label for="bpublisher">출판</label>
+                        <input type="text" id="bpublisher" name="bpublisher" value=""><br>
+                        <label for="bdate">날짜</label>
+                        <input type="date" id="bdate" name="bdate"><br>
+                        <label for="bprice">가격</label>
+                        <input type="text" id="bprice" name="bprice" value="0"><br>
+                        <label for="bsummary">요약</label>
+                        <input type="text" id="bsummary" name="bsummary" value=""><br>
+                        <label for="bphoto">사진</label>
+                        <input type="text" id="bphoto" name="photo" value=""><br>
+                        
+                        <button type="button" id="EditBoxAddButton" >Submit</button>
+
+                        
+                    </form>
+                </div>
+                <div class="EditBoxes">
+                    <!-- del -->
+                        
+                        <select id="OurBookLists">
+
+                        </select>
+                        
+                    
+                </div>
+            </div>
+            <div id="selectSectionBox">
+                    
+            </div>
+            <div id="sectionBoxScreen">
+                
+            </div>
+            <div id="moving">
+                <div id="left"></div>
+                <div id="right"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/script1.js"></script>
+</body>
+
+</html>

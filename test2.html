@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ymg {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            background: url("images/Union.png") 0 0 no-repeat;
+            /* animation: like-gif steps(3) 0.5s infinite both; */
+
+        }
+
+        .pause {
+            animation-play-state: paused;
+        }
+
+        div {
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        @keyframes like-gif {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: -587px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ymgs" class="ymg"></div>
+    <div>
+        <input type="button" id="pause" value="pause">
+    </div>
+    <script>
+        var image = document.getElementById("ymgs");
+        var button = document.getElementById("pause");
+        var backop = [0, -200, -400, -600, -800, -1200]
+        let delays = 0;
+        
+        button.onclick = background; 
+        
+        function background(){
+            setTimeout(function () {
+                image.style.backgroundPositionX = `${backop[delays]}px`;
+                delays++;
+                if(delays<6){
+                    background();
+                }
+            }, 150);
+        }
+        
+        
+        
+        
+        
+        
+//         {
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[0]}px`;
+//             }, 1000);
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[1]}px`;
+//             }, 1000);
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[2]}px`;
+//             }, 1000);
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[3]}px`;
+//             }, 1000);
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[4]}px`;
+//             }, 1000);
+//             setTimeout(function () {
+//                 image.style.backgroundPositionX = `${backop[5]}px`;
+//             }, 1000);
+
+//         }
+//         var i = 1;                  //  set your counter to 1
+
+// function myLoop() {         //  create a loop function
+//   setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+//     console.log('hello');   //  your code here
+//     i++;                    //  increment the counter
+//     if (i < 10) {           //  if the counter < 10, call the loop function
+//       myLoop();             //  ..  again which will trigger another 
+//     }                       //  ..  setTimeout()
+//   }, 3000)
+// }
+
+// myLoop();                   //  start the loop
+
+
+        // if ( image.classList&&image&&button){
+        //     button.onclick = function(){
+        //         if (this.value=='pause'){
+        //             image.classList.add('pause');
+        //             this.value ='play';
+        //         }
+        //         else{
+        //             image.classList.remove('pause');
+        //             this.value = 'pause';
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 977px;
+            height: 1277px;
+            margin: 150px auto;
+            position: relative;
+            background-color: bisque;
+        }
+
+        .one {
+            width: 100%;
+            height: calc(977px * 1);
+            border-radius: 50%;
+
+
+        }
+
+        #one1 {
+            position: absolute;
+            background-color: black;
+            top: -15%;
+            left: -15%;
+            opacity: 1;
+        }
+
+        #one2 {
+            position: absolute;
+            background-color: black;
+            top: -15%;
+            right: -15%;
+            opacity: 1;
+        }
+
+        #one3 {
+            position: absolute;
+            background-color: black;
+            bottom: -15%;
+            left: -15%;
+            opacity: 1;
+        }
+
+        #one4 {
+            position: absolute;
+            background-color: black;
+            bottom: -15%;
+            right: -15%;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 이걸로 fade out plus 좀별루니 그냥 응용만하자 그냥 대충 이런 식으로 fadeout js짜자 ㅇㅇ
+ -->
+    <div id="box">
+        <div class="one" id="one1"></div>
+        <div class="one" id="one2"></div>
+        <div class="one" id="one3"></div>
+        <div class="one" id="one4"></div>
+    </div>
+    <button onclick="move()"> click</button>
+    <script>
+        function move() {
+
+            for (let i = 0; i <= 3; i++) {
+                const elem = document.getElementsByClassName("one")[i];
+                let id = null;
+
+                let pos = 0;
+                clearInterval(id);
+                id = setInterval(frame, 10);
+                function frame() {
+                    if (pos == 200) {
+                        clearInterval(id);
+                    }
+                    else {
+                        switch (i) {
+                            case 0:
+                                pos++;
+                                elem.style.top = -pos + "%";
+                                elem.style.left = -pos + "%";
+                                elem.style.opacity =(1 - (0.02 * pos));
+                                break;
+                            case 1: //왜 너만 돌릴 땐 괜찮은데 다같이 돌림 왼쪽으로 가니 ////break을 안 넣었으니까...
+                                pos++;
+                                elem.style.top = -pos + "%";
+                                elem.style.right = -pos + "%";
+                                elem.style.opacity =(1 - (0.02 * pos));
+                                break;
+                            case 2:
+                                pos++;
+                                elem.style.bottom = -pos + "%";
+                                elem.style.left = -pos + "%";
+                                elem.style.opacity =(1 - (0.02 * pos));
+                                break;
+                            case 3:
+                                pos++;
+                                elem.style.bottom = -pos + "%";
+                                elem.style.right = -pos + "%";
+                                elem.style.opacity =(1 - (0.02 * pos));
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
